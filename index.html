@@ -13,10 +13,10 @@
     <!-- Header -->
     <div class="flex justify-between items-center mb-4">
       <div class="flex items-center">
-        <img src="https://via.placeholder.com/40" class="w-10 h-10 rounded-full mr-3" />
+        <img src="images/logo-utama.jpg" class="w-10 h-10 rounded-full mr-3" />
         <div class="text-sm">
-          <div class="font-bold">FENNY WILSON</div>
-          <div>Cammack Village</div>
+          <div class="font-bold">MOLEN BAGUS</div>
+          <div>Jajanan Tradisional</div>
         </div>
       </div>
       <i class="fa fa-bell text-xl"></i>
@@ -24,23 +24,23 @@
 
     <!-- Banner -->
     <div class="bg-blue-600 text-white rounded-2xl p-5 relative overflow-hidden mb-4">
-      <h2 class="text-lg font-semibold leading-tight">Fresh & Natural <br><strong class="text-xl">Milk</strong></h2>
+      <h2 class="text-lg font-semibold leading-tight">Molen Bagus <br><strong class="text-xl">Molen</strong></h2>
       <img src="https://cdn-icons-png.flaticon.com/512/3038/3038129.png" class="w-20 absolute top-2 right-2" />
     </div>
 
     <!-- Categories -->
     <div class="flex overflow-x-auto space-x-3 mb-4">
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/3038/3038129.png" class="w-8 mx-auto mb-1" />Milk
+        <img src="https://cdn-icons-png.flaticon.com/512/3038/3038129.png" class="w-8 mx-auto mb-1" />Cash
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/1852/1852532.png" class="w-8 mx-auto mb-1" />Curd
+        <img src="https://cdn-icons-png.flaticon.com/512/1852/1852532.png" class="w-8 mx-auto mb-1" />Gofood
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/4904/4904694.png" class="w-8 mx-auto mb-1" />Paneer
+        <img src="https://cdn-icons-png.flaticon.com/512/4904/4904694.png" class="w-8 mx-auto mb-1" />>Grab
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" class="w-8 mx-auto mb-1" />Ghee
+        <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" class="w-8 mx-auto mb-1" />Shopeefood
       </div>
     </div>
 
@@ -48,7 +48,7 @@
     <input id="searchInput" type="text" placeholder="Cari produk..." class="w-full p-3 rounded-lg border border-gray-300 mb-4" />
 
     <!-- Product Section -->
-    <h3 class="font-bold mb-3">You Might Need</h3>
+    <h3 class="font-bold mb-3">Produk</h3>
     <div id="productList" class="grid grid-cols-2 gap-3"></div>
   </div>
 
@@ -79,13 +79,18 @@
   <!-- Script -->
   <script>
     const productData = [
-      { name: "Cow Milk", price: "$12.00", img: "https://via.placeholder.com/150x100.png?text=Cow+Milk" },
-      { name: "Buffalo Milk", price: "$18.00", img: "https://via.placeholder.com/150x100.png?text=Buffalo+Milk" },
-      { name: "Goat Milk", price: "$15.00", img: "https://via.placeholder.com/150x100.png?text=Goat+Milk" },
-      { name: "Almond Milk", price: "$20.00", img: "https://via.placeholder.com/150x100.png?text=Almond+Milk" },
-      { name: "Soy Milk", price: "$14.00", img: "https://via.placeholder.com/150x100.png?text=Soy+Milk" },
-      { name: "Camel Milk", price: "$22.00", img: "https://via.placeholder.com/150x100.png?text=Camel+Milk" },
-      { name: "Chocolate Milk", price: "$16.00", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" }
+      { name: "Molen Original", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Cow+Milk" },
+      { name: "Molen coklat", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Buffalo+Milk" },
+      { name: "Molen Keju", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Goat+Milk" },
+      { name: "Molen kacang hijau", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Almond+Milk" },
+      { name: "Onde Original", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Soy+Milk" },
+      { name: "Onde ketan hitam", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Camel+Milk" },
+      { name: "Pastel isi Sayur", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
+      { name: "Kue Soes Vanila", price: "Rp.2.500", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
+      { name: "Kue Soes Taro", price: "Rp.2.500", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
+      { name: "Kue Soes Sirkaya", price: "Rp.2.500", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
+      { name: "Kue Soes Ketan hitam", price: "Rp.2.500", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
+      { name: "Pastel isi Sayur", price: "$16.00", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" }
     ];
 
     const cart = [];
