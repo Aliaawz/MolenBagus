@@ -1,1 +1,160 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milk Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="bg-blue-50 text-gray-800 pb-20">
+  <div class="max-w-md mx-auto p-4">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-4">
+      <div class="flex items-center">
+        <img src="https://via.placeholder.com/40" class="w-10 h-10 rounded-full mr-3" />
+        <div class="text-sm">
+          <div class="font-bold">FENNY WILSON</div>
+          <div>Cammack Village</div>
+        </div>
+      </div>
+      <i class="fa fa-bell text-xl"></i>
+    </div>
+
+    <!-- Banner -->
+    <div class="bg-blue-600 text-white rounded-2xl p-5 relative overflow-hidden mb-4">
+      <h2 class="text-lg font-semibold leading-tight">Fresh & Natural <br><strong class="text-xl">Milk</strong></h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/3038/3038129.png" class="w-20 absolute top-2 right-2" />
+    </div>
+
+    <!-- Categories -->
+    <div class="flex overflow-x-auto space-x-3 mb-4">
+      <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3038/3038129.png" class="w-8 mx-auto mb-1" />Milk
+      </div>
+      <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/1852/1852532.png" class="w-8 mx-auto mb-1" />Curd
+      </div>
+      <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/4904/4904694.png" class="w-8 mx-auto mb-1" />Paneer
+      </div>
+      <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" class="w-8 mx-auto mb-1" />Ghee
+      </div>
+    </div>
+
+    <!-- Search -->
+    <input id="searchInput" type="text" placeholder="Cari produk..." class="w-full p-3 rounded-lg border border-gray-300 mb-4" />
+
+    <!-- Product Section -->
+    <h3 class="font-bold mb-3">You Might Need</h3>
+    <div id="productList" class="grid grid-cols-2 gap-3"></div>
+  </div>
+
+  <!-- Cart Overlay -->
+  <div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-2xl p-6 w-11/12 max-w-sm relative">
+      <button onclick="toggleCart(false)" class="absolute top-2 right-2 text-lg">
+        <i class="fa fa-times"></i>
+      </button>
+      <h3 class="text-lg font-bold mb-3">Isi Keranjang</h3>
+      <ul id="cartItems" class="space-y-2 max-h-60 overflow-y-auto text-left text-sm">
+        <li>(Kosong)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Navbar -->
+  <div class="fixed bottom-0 left-0 w-full bg-white shadow-inner py-2 flex justify-around text-gray-700 text-xl z-40">
+    <a href="#" class="text-blue-600"><i class="fa fa-home"></i></a>
+    <a href="#" onclick="document.getElementById('searchInput').focus()"><i class="fa fa-search"></i></a>
+    <a href="#" onclick="toggleCart(true)" class="relative">
+      <i class="fa fa-shopping-cart"></i>
+      <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+    </a>
+    <a href="#"><i class="fa fa-user"></i></a>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const productData = [
+      { name: "Cow Milk", price: "$12.00", img: "https://via.placeholder.com/150x100.png?text=Cow+Milk" },
+      { name: "Buffalo Milk", price: "$18.00", img: "https://via.placeholder.com/150x100.png?text=Buffalo+Milk" },
+      { name: "Goat Milk", price: "$15.00", img: "https://via.placeholder.com/150x100.png?text=Goat+Milk" },
+      { name: "Almond Milk", price: "$20.00", img: "https://via.placeholder.com/150x100.png?text=Almond+Milk" },
+      { name: "Soy Milk", price: "$14.00", img: "https://via.placeholder.com/150x100.png?text=Soy+Milk" },
+      { name: "Camel Milk", price: "$22.00", img: "https://via.placeholder.com/150x100.png?text=Camel+Milk" },
+      { name: "Chocolate Milk", price: "$16.00", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" }
+    ];
+
+    const cart = [];
+
+    function loadProducts() {
+      const container = document.getElementById("productList");
+      container.innerHTML = "";
+      productData.forEach((product, index) => {
+        const card = document.createElement("div");
+        card.className = "bg-white rounded-xl p-3 shadow relative";
+        card.innerHTML = `
+          <img src="${product.img}" class="rounded-md mb-2" />
+          <h4 class="font-semibold text-sm">${product.name}</h4>
+          <span class="text-xs text-gray-600">${product.price}</span>
+          <button class="absolute top-2 right-2 text-yellow-500 text-sm" onclick="addToCart(${index})">
+            <i class='fa fa-plus'></i>
+          </button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function addToCart(index) {
+      cart.push(productData[index]);
+      updateCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById("cartItems");
+      const cartCount = document.getElementById("cartCount");
+
+      if (cart.length === 0) {
+        cartList.innerHTML = "<li>(Kosong)</li>";
+        cartCount.classList.add("hidden");
+        return;
+      }
+
+      cartList.innerHTML = "";
+      cart.forEach((item, idx) => {
+        const li = document.createElement("li");
+        li.className = "flex justify-between items-center border-b pb-1";
+        li.innerHTML = `${item.name} - ${item.price}
+          <button onclick="removeFromCart(${idx})" class="text-red-500"><i class='fa fa-trash'></i></button>`;
+        cartList.appendChild(li);
+      });
+
+      cartCount.textContent = cart.length;
+      cartCount.classList.remove("hidden");
+    }
+
+    function toggleCart(show) {
+      document.getElementById("cartOverlay").style.display = show ? "flex" : "none";
+    }
+
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const cards = document.querySelectorAll("#productList .bg-white");
+      productData.forEach((product, index) => {
+        const match = product.name.toLowerCase().includes(query);
+        cards[index].style.display = match ? "block" : "none";
+      });
+    });
+
+    loadProducts();
+  </script>
+</body>
+</html>
