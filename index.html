@@ -9,15 +9,7 @@
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    .scrollbar-hidden::-webkit-scrollbar { display: none; }
-    .scrollbar-hidden { -ms-overflow-style: none; scrollbar-width: none; }
-    .fade-in { animation: fadeIn 0.3s ease-out; }
-    .fade-out { animation: fadeOut 0.3s ease-in; }
-    @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-    @keyframes fadeOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.95); } }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-orange-50 text-gray-800 pb-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,16 +32,16 @@
     <!-- Categories -->
     <div class="flex overflow-x-auto space-x-3 mb-4">
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/3038/3038129.png" class="w-8 mx-auto mb-1" />Cash
+        <img src="images/cash.jpg" class="w-8 mx-auto mb-1" />Cash
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/1852/1852532.png" class="w-8 mx-auto mb-1" />Gojek
+        <img src="images/shopeefood.png" class="w-8 mx-auto mb-1" />Shopee
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/4904/4904694.png" class="w-8 mx-auto mb-1" />Grab
+        <img src="images/graabfood.jpg" class="w-8 mx-auto mb-1" />Grab
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" class="w-8 mx-auto mb-1" />Shopee
+        <img src="images/gfood.png" class="w-8 mx-auto mb-1" />Gojek
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
         <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" class="w-8 mx-auto mb-1" />Shopee
@@ -99,69 +91,42 @@
   </div>
 
 
-   
-  <!-- Ulasan Pelanggan -->
-   
-  <div class="px-6 py-8 bg-orange-50">
-  <h2 class="text-xl font-semibold mb-6">Ulasan Pelanggan</h2>
-  
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+  </div>
 
-  <div class="space-y-4">
-  <!-- Ulasan -->
-  <div class="flex gap-4 items-start p-4 bg-white rounded-xl shadow-md">
-    <img src="https://i.pravatar.cc/48?img=1" alt="avatar" class="w-12 h-12 rounded-full">
-    <div>
-      <div class="flex items-center gap-2 text-sm font-semibold">
-        <span>Sari</span>
-        <span class="text-yellow-400">★★★★☆</span>
+  <!-- Ulasan Pelanggan Section -->
+  <div class="mt-16">
+    <h3 class="text-xl font-semibold mb-6">Ulasan Pelanggan</h3>
+    <div class="space-y-4">
+      <div class="bg-white p-4 rounded-xl ">
+        <div class="font-semibold">Sari</div>
+        <p class="text-sm text-gray-700">Molennya enak banget, renyah dan manisnya pas. Anak-anak juga suka!</p>
       </div>
-      <p class="text-gray-700 mt-1 text-sm">
-        Molennya enak banget, renyah dan manisnya pas. Anak-anak juga suka!
-      </p>
+      <div class="bg-white p-4 rounded-xl ">
+        <div class="font-semibold">Rina</div>
+        <p class="text-sm text-gray-700">Top markotop! Baru pertama coba langsung suka. Recommended banget!</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl ">
+        <div class="font-semibold">Budi</div>
+        <p class="text-sm text-gray-700">Teksturnya lembut di dalam, crunchy di luar. Cocok buat camilan sore.</p>
+      </div>
     </div>
   </div>
-</div>
-
-    <!-- Ulasan 2 -->
-    <div class="space-y-5 py-3">
-  <!-- Ulasan -->
-  <div class="flex gap-4 items-start p-4 bg-white rounded-xl shadow-md">
-    <img src="https://i.pravatar.cc/48?img=1" alt="avatar" class="w-12 h-12 rounded-full">
-    <div>
-      <div class="flex items-center gap-2 text-sm font-semibold">
-        <span>Sari</span>
-        <span class="text-yellow-400">★★★★☆</span>
-      </div>
-      <p class="text-gray-700 mt-1 text-sm">
-        Molennya enak banget, renyah dan manisnya pas. Anak-anak juga suka!
-      </p>
-    </div>
-  </div>
-</div>
-
-  <div class="space-y-4 ">
-  <!-- Ulasan -->
-  <div class="flex gap-4 items-start p-4 bg-white rounded-xl shadow-md ">
-    <img src="https://i.pravatar.cc/48?img=1" alt="avatar" class="w-12 h-12 rounded-full">
-    <div>
-      <div class="flex items-center gap-2 text-sm font-semibold">
-        <span>Sari</span>
-        <span class="text-yellow-400">★★★★☆</span>
-      </div>
-      <p class="text-gray-700 mt-1 text-sm">
-        Molennya enak banget, renyah dan manisnya pas. Anak-anak juga suka!
-      </p>
-    </div>
-  </div>
-</div>
-
 <div class=" py-3">
 <button><a href="komen.html" class="bg-yellow-300 hover:bg-yellow-300 text-black px-3 rounded-r text-xs font-semibold px-2"> Read More</button></a>
 </div>
 </div></button>
 
+</div>
+
+
  
   <!-- Footer -->
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+  </div>
+
    <div class="bg-white-50 px-6 text-xs">
   <div class="space-y- mx-auto grid grid-cols-1 md:grid-cols-4 gap-2">
 
@@ -221,39 +186,39 @@
 
   <script>
       const productData = [
-      { name: "Molen Original", price: "Rp.1.750", img: "images/logo-utama.jpg" },
-      { name: "Molen coklat", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Buffalo+Milk" },
-      { name: "Molen Keju", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Goat+Milk" },
-      { name: "Molen kacang hijau", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Almond+Milk" },
-      { name: "Onde Original", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Soy+Milk" },
-      { name: "Onde ketan hitam", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Camel+Milk" },
-      { name: "Pastel isi Sayur", price: "Rp.1.750", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
-      { name: "Kue Soes Vanila", price: "Rp.2.500", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
-      { name: "Kue Soes Taro", price: "Rp.2.500", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
-      { name: "Kue Soes Sirkaya", price: "Rp.2.500", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
-      { name: "Kue Soes Ketan hitam", price: "Rp.2.500", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" },
-      { name: "Pastel isi Sayur", price: "$16.00", img: "https://via.placeholder.com/150x100.png?text=Chocolate+Milk" }
+      { name: "Molen Original", price: "Rp.1.750", img: "images/m original.jpg" },
+      { name: "Molen coklat", price: "Rp.1.750", img: "images/m coklat.jpg" },
+      { name: "Molen Keju", price: "Rp.1.750", img: "images/m keju.jpg" },
+      { name: "Molen kacang hijau", price: "Rp.1.750", img: "images/m kacang ijo.jpg" },
+      { name: "Onde Original", price: "Rp.1.750", img: "images/onde original.jpg" },
+      { name: "Onde ketan hitam", price: "Rp.1.750", img: "images/onde ketan.jpg" },
+      { name: "Pastel isi Sayur", price: "Rp.1.750", img: "images/pastel.jpg" },
+      { name: "Kue Soes Vanila", price: "Rp.2.500", img: "images/sus vanila.jpg" },
+      { name: "Kue Soes Taro", price: "Rp.2.500", img: "images/sus taro.jpg" },
+      { name: "Kue Soes Sirkaya", price: "Rp.2.500", img: "images/sus sirkaya" },
+      { name: "Kue Soes Ketan hitam", price: "Rp.2.500", img: "images/sus ketan.jpg" },
     ];
 
     const cart = [];
 
     function loadProducts() {
-      const container = document.getElementById("productList");
-      container.innerHTML = "";
-      productData.forEach((product, index) => {
-        const card = document.createElement("div");
-        card.className = "bg-white rounded-xl p-3 shadow relative hover:shadow-md transition";
-        card.innerHTML = `
-          <img src="${product.img}" class="rounded-md mb-2 w-full h-auto" loading="lazy" />
-          <h4 class="font-semibold text-sm">${product.name}</h4>
-          <span class="text-xs text-gray-600">${product.price}</span>
-          <button class="absolute top-2 right-2 text-yellow-500 text-sm" onclick="addToCart(${index})">
-            <i class='fa fa-plus'></i>
-          </button>
-        `;
-        container.appendChild(card);
-      });
-    }
+  const container = document.getElementById("productList");
+  container.innerHTML = "";
+  productData.forEach((product, index) => {
+    const card = document.createElement("div");
+    card.className = "bg-white rounded-xl p-3 shadow relative hover:shadow-md transition";
+    card.innerHTML = `
+      <img src="${product.img}" class="rounded-md mb-2 w-full h-auto" loading="lazy" />
+      <h4 class="font-semibold text-sm">${product.name}</h4>
+      <span class="text-xs text-gray-600">${product.price}</span>
+      <button onclick="addToCart(${index})" class="absolute top-2 right-2 bg-yellow-300 text-white rounded p-1 shadow hover:scale-110 hover:shadow-lg transition-all duration-300">
+        <i class='fa fa-plus'></i>
+      </button>
+    `;
+    container.appendChild(card);
+  });
+}
+
 
     function showToast(msg) {
       const toast = document.createElement("div");
