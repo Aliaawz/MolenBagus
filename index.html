@@ -44,13 +44,13 @@
         <img src="images/gfood.png" class="w-8 mx-auto mb-1" />Gojek
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="images/maps.jpg" class="w-8 mx-auto mb-1" />Shopee
+        <img src="images/maps.jpg" class="w-8 mx-auto mb-1" />outlet
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="images/wa.jpg" class="w-8 mx-auto mb-1" />Shopee
+        <img src="images/wa.jpg" class="w-8 mx-auto mb-1" />Contact
       </div>
       <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="images/ig.jpg" class="w-8 mx-auto mb-1" />Shopee
+        <img src="images/ig.jpg" class="w-8 mx-auto mb-1" />IG
       </div>
     </div>
 
@@ -92,8 +92,6 @@
           Bayar Sekarang
         </button>
 
-        
-
       </div>
     </div>
   </div>
@@ -116,29 +114,15 @@
   </div>
 
   <!-- Ulasan Pelanggan Section -->
-  <div class="mt-16">
-    <h3 class="text-xl font-semibold mb-6">Ulasan Pelanggan</h3>
-    <div class="space-y-4">
-      <div class="bg-white p-4 rounded-xl ">
-        <div class="font-semibold">Sari</div>
-        <p class="text-sm text-gray-700">Molennya enak banget, renyah dan manisnya pas. Anak-anak juga suka!</p>
-      </div>
-      <div class="bg-white p-4 rounded-xl ">
-        <div class="font-semibold">Rina</div>
-        <p class="text-sm text-gray-700">Top markotop! Baru pertama coba langsung suka. Recommended banget!</p>
-      </div>
-      <div class="bg-white p-4 rounded-xl ">
-        <div class="font-semibold">Budi</div>
-        <p class="text-sm text-gray-700">Teksturnya lembut di dalam, crunchy di luar. Cocok buat camilan sore.</p>
-      </div>
-    </div>
-  </div>
-<div class=" py-3">
-<button><a href="komen.html" class="bg-yellow-300 hover:bg-yellow-300 text-black px-3 rounded-r text-xs font-semibold px-2"> Read More</button></a>
+ <div class="mt-16">
+  <h3 class="text-xl font-semibold mb-6">Ulasan Pelanggan</h3>
+  <div id="reviewList" class="space-y-4"></div> <!-- Kosong tapi nanti diisi JS -->
+  
+  <div class="py-3">
+  <button onclick="loadMoreReviews()" class="bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded text-xs font-semibold inline-block">Read More</button>
 </div>
-</div></button>
+</div>
 
-</div>
 
 
  
@@ -220,6 +204,99 @@
       { name: "Molen Original", price: "Rp.1.750", img: "images/m original.jpg" },
     ];
 
+  const initialReviews = [
+  {
+    name: "Dian Permatasari",
+    image: "pelanggan/D.png",
+    rating: 4,
+    timeAgo: "2 tahun yg lalu",
+    comment: "Enak molen pisangnya. Kalau bisa harganya balik ke awal."
+  },
+  {
+    name: "Neneng Rahayu",
+    image: "pelanggan/N.png",
+    rating: 4,
+    timeAgo: "3 tahun yg lalu",
+    comment: "Baru nyoba sekali .. enak onde nya renyah"
+  },
+  {
+    name: "Mia Kamiyama",
+    image: "pelanggan/M.png",
+    rating: 3,
+    timeAgo: "4 tahun yg lalu",
+    comment: "Tadi saya beli molen di gofood, saya kaget pas dapatnya kok hanya ditaruh di kertas..."
+  }
+];
+
+const moreReviews = [
+  {
+    name: "Ridwan Alinov",
+    image: "pelanggan/R.png",
+    rating: 3,
+    timeAgo: "2 tahun yg lalu",
+    comment: "Molenya enak cuman pas saya beli di gerkalong  depan cafe northwood ,pegawai main PUBG nya asik banget.. dan waktu saya beli dia kaya pengen buru-bur selesai buat nerusin Gamenya. Saya beli 10rb molen 5rb onde tapi pas saya cek di rumah isinya molen semua 😂 salah saya juga gk cek karna lagi hujan jadi buru"
+  },
+  {
+    name: "Rahila Adhien",
+    image: "pelanggan/RA.png",
+    rating: 5,
+    timeAgo: "4 tahun yg lalu",
+    comment: ""
+  }
+];
+
+let allReviews = [...initialReviews];
+let moreLoaded = false;
+
+
+function renderReviews() {
+  const container = document.getElementById("reviewList");
+  container.innerHTML = "";
+
+  allReviews.forEach((review) => {
+    const reviewEl = document.createElement("div");
+    reviewEl.className = "bg-white p-4 rounded-xl flex items-start space-x-4 transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg";
+
+
+    let stars = "";
+    for (let i = 1; i <= 5; i++) {
+      stars += `<i class="${i <= review.rating ? 'fas' : 'far'} fa-star text-yellow-400"></i>`;
+    }
+
+    reviewEl.innerHTML = `
+      <img src="${review.image}" alt="${review.name}" class="w-10 h-10 rounded-full object-cover">
+      <div>
+        <div class="font-semibold">${review.name}</div>
+        <div class="flex items-center text-sm text-yellow-400 mb-1 space-x-2">
+          <div class="flex">${stars}</div>
+          <span class="text-gray-500 text-xs">${review.timeAgo}</span>
+        </div>
+        <p class="text-sm text-gray-700">${review.comment}</p>
+      </div>
+    `;
+    container.appendChild(reviewEl);
+  });
+}
+
+function loadMoreReviews() {
+  if (!moreLoaded) {
+    allReviews = [...initialReviews, ...moreReviews];
+    renderReviews();
+    moreLoaded = true;
+
+    // Optional: ubah tombol jadi "Read Less"
+    const btn = document.querySelector("button[onclick='loadMoreReviews()']");
+    btn.textContent = "Read Less";
+  } else {
+    allReviews = [...initialReviews];
+    renderReviews();
+    moreLoaded = false;
+
+    const btn = document.querySelector("button[onclick='loadMoreReviews()']");
+    btn.textContent = "Read More";
+  }
+}
+
     const cart = [];
 
     function loadProducts() {
@@ -227,7 +304,7 @@
   container.innerHTML = "";
   productData.forEach((product, index) => {
     const card = document.createElement("div");
-    card.className = "bg-white rounded-xl p-3 shadow relative hover:shadow-md transition";
+    card.className = "bg-white rounded-xl p-3 shadow relative hover:shadow-md transition duration-300 hover:scale-[1.02]";
     card.innerHTML = `
       <img src="${product.img}" class="rounded-md mb-2 w-full h-auto" loading="lazy" />
       <h4 class="font-semibold text-sm">${product.name}</h4>
@@ -425,7 +502,10 @@ function goToCheckout() {
         updateCart();
       }
       loadProducts();
+       renderReviews();    // Tampilkan ulasan
     };
+
+    
 
     
   </script>
