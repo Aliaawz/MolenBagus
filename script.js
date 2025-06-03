@@ -106,6 +106,29 @@ function loadMoreReviews() {
   }
 }
 
+   const banner = document.getElementById("molenBanner");
+
+  const bgImages = [
+    "images/utama.jpg",
+    "images/bg2.jpg",
+    "images/bg3.jpg"
+  ];
+
+  let currentBg = 0;
+
+  function changeBannerBg() {
+    banner.style.backgroundImage = `url('${bgImages[currentBg]}')`;
+    currentBg = (currentBg + 1) % bgImages.length;
+  }
+
+  // Ganti gambar pertama saat load
+  changeBannerBg();
+
+  // Ganti gambar tiap 5 detik
+  setInterval(changeBannerBg, 5000);
+
+    
+
     const cart = [];
 
     function loadProducts() {
@@ -314,6 +337,6 @@ function goToCheckout() {
        renderReviews();    // Tampilkan ulasan
     };
 
-    
+ 
 
   
