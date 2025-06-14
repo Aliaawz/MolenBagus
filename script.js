@@ -34,10 +34,7 @@ const productData = [
     rating: 3,
     timeAgo: "4 tahun yg lalu",
     comment: "Tadi saya beli molen di gofood, saya kaget pas dapatnya kok hanya ditaruh di kertas..."
-  }
-];
-
-const moreReviews = [
+  },
   {
     name: "Ridwan Alinov",
     image: "pelanggan/R.png",
@@ -53,6 +50,7 @@ const moreReviews = [
     comment: ""
   }
 ];
+
 
 let allReviews = [...initialReviews];
 let moreLoaded = false;

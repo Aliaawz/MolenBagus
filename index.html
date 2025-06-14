@@ -29,36 +29,30 @@
 
 
     <!-- Categories -->
-<div class="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 my-6">
-  <a href="#" target="_blank" class="flex flex-col items-center w-20 bg-white p-3 rounded-xl shadow hover:shadow-md transition">
-    <img src="images/cash.jpg" alt="Cash" class="w-8 h-8 mb-1" />
-    <span class="text-sm">Cash</span>
+<div class="grid grid-cols-4 sm:grid-cols-7 gap-3 mb-4 justify-items-center">
+  <a href="#" target="_blank" class="flex flex-col items-center w-full bg-white p-2 rounded-xl shadow text-center text-sm">
+    <img src="images/cash.jpg" class="w-6 sm:w-8 mb-1" />Cash
   </a>
-  <a href="https://shopee.co.id/universal-link/now-food/shop/1233115" target="_blank" class="flex flex-col items-center w-20 bg-white p-3 rounded-xl shadow hover:shadow-md transition">
-    <img src="images/shopeefood.png" alt="Shopee" class="w-8 h-8 mb-1" />
-    <span class="text-sm">Shopee</span>
+  <a href="https://shopee.co.id/universal-link/now-food/shop/1233115" target="_blank" class="flex flex-col items-center w-full bg-white p-2 rounded-xl shadow text-center text-sm">
+    <img src="images/shopeefood.png" class="w-6 sm:w-8 mb-1" />Shopee
   </a>
-  <a href="https://r.grab.com/g/your-link" target="_blank" class="flex flex-col items-center w-20 bg-white p-3 rounded-xl shadow hover:shadow-md transition">
-    <img src="images/graabfood.jpg" alt="Grab" class="w-8 h-8 mb-1" />
-    <span class="text-sm">Grab</span>
+  <a href="https://r.grab.com/g/your-link" target="_blank" class="flex flex-col items-center w-full bg-white p-2 rounded-xl shadow text-center text-sm">
+    <img src="images/graabfood.jpg" class="w-6 sm:w-8 mb-1" />Grab
   </a>
-  <a href="https://gofood.link/a/EUhuKHE" target="_blank" class="flex flex-col items-center w-20 bg-white p-3 rounded-xl shadow hover:shadow-md transition">
-    <img src="images/gfood.png" alt="Gojek" class="w-8 h-8 mb-1" />
-    <span class="text-sm">Gojek</span>
+  <a href="https://gofood.link/a/EUhuKHE" target="_blank" class="flex flex-col items-center w-full bg-white p-2 rounded-xl shadow text-center text-sm">
+    <img src="images/gfood.png" class="w-6 sm:w-8 mb-1" />Gojek
   </a>
-  <a href="https://www.google.com/maps/place/Molen+Bagus/@-6.9266243,107.4178426,10.51z/data=!4m6!3m5!1s0x2e68e7356e3610d9:0x5734e8915dd07135!8m2!3d-6.8821765!4d107.5763829!16s%2Fg%2F11jlshvkr3?entry=ttu&g_ep=EgoyMDI1MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="flex flex-col items-center w-20 bg-white p-3 rounded-xl shadow hover:shadow-md transition">
-    <img src="images/maps.jpg" alt="Outlet" class="w-8 h-8 mb-1" />
-    <span class="text-sm">Outlet</span>
+  <a href="https://www.google.com/maps/place/Molen+Bagus" target="_blank" class="flex flex-col items-center w-full bg-white p-2 rounded-xl shadow text-center text-sm">
+    <img src="images/maps.jpg" class="w-6 sm:w-8 mb-1" />Outlet
   </a>
-  <a href="https://wa.me/6285283751548?text=Halo%20Molen%20Bagus%2C%20saya%20mau%20pesan%20ya!" target="_blank" class="flex flex-col items-center w-20 bg-white p-3 rounded-xl shadow hover:shadow-md transition">
-    <img src="images/wa.jpg" alt="Contact" class="w-8 h-8 mb-1" />
-    <span class="text-sm">Contact</span>
+  <a href="https://wa.me/6285283751548?text=Halo%20Molen%20Bagus" target="_blank" class="flex flex-col items-center w-full bg-white p-2 rounded-xl shadow text-center text-sm">
+    <img src="images/wa.jpg" class="w-6 sm:w-8 mb-1" />Contact
   </a>
-  <a href="https://www.instagram.com/molen_bagus?igsh=bDVvZHFjdmJydjd5" target="_blank" class="flex flex-col items-center w-20 bg-white p-3 rounded-xl shadow hover:shadow-md transition">
-    <img src="images/ig.jpg" alt="IG" class="w-8 h-8 mb-1" />
-    <span class="text-sm">IG</span>
+  <a href="https://www.instagram.com/molen_bagus" target="_blank" class="flex flex-col items-center w-full bg-white p-2 rounded-xl shadow text-center text-sm">
+    <img src="images/ig.jpg" class="w-6 sm:w-8 mb-1" />IG
   </a>
 </div>
+
 
 
 
@@ -117,18 +111,38 @@
   </div>
 
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
-  </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+    
+    <!-- Ulasan Pelanggan -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Ulasan Pelanggan</h3>
+      <div id="reviewList" class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+          <p class="font-semibold">Dian Permatasari</p>
+          <p class="text-sm text-gray-600">Enak molen pisangnya...</p>
+        </div>
+        <!-- tambahkan lainnya -->
+      </div>
+      <div class="py-3">
+        <button class="bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded text-xs font-semibold">
+          Read More
+        </button>
+      </div>
+    </div>
 
-  <!-- Ulasan Pelanggan Section -->
- <div class="mt-16">
-  <h3 class="text-xl font-semibold mb-6">Ulasan Pelanggan</h3>
-  <div id="reviewList" class="space-y-4"></div> <!-- Kosong tapi nanti diisi JS -->
-  
-  <div class="py-3">
-  <button onclick="loadMoreReviews()" class="bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded text-xs font-semibold inline-block">Read More</button>
-</div>
+    <!-- Form Saran dan Kritik -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Beri kami saran & kritik</h3>
+      <form class="flex gap-2">
+        <input type="email" placeholder="Email anda" class="flex-1 px-4 py-2 border border-gray-300 rounded" required>
+        <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded">
+          Kirim
+        </button>
+      </form>
+    </div>
+
+  </div>
 </div>
 
 
