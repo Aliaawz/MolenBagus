@@ -60,46 +60,29 @@ initialReviews.forEach((review) => {
   reviewCard.className = "bg-white p-4 rounded-xl shadow";
 
   reviewCard.innerHTML = `
-    <div class="flex items-center mb-3">
-      <img src="${review.image}" alt="${review.name}" class="w-10 h-10 rounded-full mr-3">
-      <div>
-        <p class="font-semibold">${review.name}</p>
-        <div class="text-yellow-500 text-sm">${stars}</div>
-        <p class="text-xs text-gray-500">${review.timeAgo}</p>
-      </div>
+  <div class="flex items-center mb-3">
+    <img src="${review.image}" alt="${review.name}" width="40" height="40" loading="lazy" class="w-10 h-10 rounded-full mr-3">
+    <div>
+      <p class="font-semibold">${review.name}</p>
+      <div class="text-yellow-500 text-sm">${stars}</div>
+      <p class="text-xs text-gray-500">${review.timeAgo}</p>
     </div>
-    <p class="text-sm text-gray-700">${review.comment || '<i>(tidak ada komentar)</i>'}</p>
-  `;
+  </div>
+  <p class="text-sm text-gray-700">${review.comment || '<i>(tidak ada komentar)</i>'}</p>
+`;
+
 
   reviewList.appendChild(reviewCard);
 });
 
 
-function loadMoreReviews() {
-  if (!moreLoaded) {
-    allReviews = [...initialReviews, ...moreReviews];
-    renderReviews();
-    moreLoaded = true;
-
-    // Optional: ubah tombol jadi "Read Less"
-    const btn = document.querySelector("button[onclick='loadMoreReviews()']");
-    btn.textContent = "Read Less";
-  } else {
-    allReviews = [...initialReviews];
-    renderReviews();
-    moreLoaded = false;
-
-    const btn = document.querySelector("button[onclick='loadMoreReviews()']");
-    btn.textContent = "Read More";
-  }
-}
 
    const banner = document.getElementById("molenBanner");
 
   const bgImages = [
     "images/utama.jpg",
-    "images/bg2.jpg",
-    "images/bg3.jpg"
+    "images/utama.jpg",
+    "images/utama.jpg"
   ];
 
   let currentBg = 0;
