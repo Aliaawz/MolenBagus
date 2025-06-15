@@ -238,9 +238,9 @@ function goToCheckout() {
 
   // JIKA METODE WhatsApp
   if (selectedPayment === 'WhatsApp') {
-  const nama = "Neneng";
-  const alamat = "Jl. Mawar No. 9, Bandung";
-  const metodePembayaran = "Cash";
+  const nama = "isi nama kamu";
+  const alamat = "isi alamat kamu";
+  const metodePembayaran = "isi metode pembayaran";
 
     let message = `Nama: ${nama}%0A`;
     message += `Alamat: ${alamat}%0A`;
