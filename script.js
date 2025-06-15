@@ -13,7 +13,7 @@ const productData = [
       { name: "Molen Original", price: "Rp.1.750", img: "images/m original.jpg" },
     ];
 
-  const initialReviews = [
+ const initialReviews = [
   {
     name: "Dian Permatasari",
     image: "pelanggan/D.png",
@@ -40,7 +40,7 @@ const productData = [
     image: "pelanggan/R.png",
     rating: 3,
     timeAgo: "2 tahun yg lalu",
-    comment: "Molenya enak cuman pas saya beli di gerkalong  depan cafe northwood ,pegawai main PUBG nya asik banget.. dan waktu saya beli dia kaya pengen buru-bur selesai buat nerusin Gamenya. Saya beli 10rb molen 5rb onde tapi pas saya cek di rumah isinya molen semua 😂 salah saya juga gk cek karna lagi hujan jadi buru"
+    comment: "Molenya enak cuman pas saya beli di gerkalong depan cafe northwood, pegawai main PUBG-nya asik banget.. dan waktu saya beli dia kaya pengen buru-buru selesai buat nerusin Gamenya. Saya beli 10rb molen 5rb onde tapi pas saya cek di rumah isinya molen semua 😂 salah saya juga gk cek karna lagi hujan jadi buru."
   },
   {
     name: "Rahila Adhien",
@@ -51,39 +51,29 @@ const productData = [
   }
 ];
 
+const reviewList = document.getElementById("reviewList");
 
-let allReviews = [...initialReviews];
-let moreLoaded = false;
+initialReviews.forEach((review) => {
+  const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
 
+  const reviewCard = document.createElement("div");
+  reviewCard.className = "bg-white p-4 rounded-xl shadow";
 
-function renderReviews() {
-  const container = document.getElementById("reviewList");
-  container.innerHTML = "";
-
-  allReviews.forEach((review) => {
-    const reviewEl = document.createElement("div");
-    reviewEl.className = "bg-white p-4 rounded-xl flex items-start space-x-4 transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg";
-
-
-    let stars = "";
-    for (let i = 1; i <= 5; i++) {
-      stars += `<i class="${i <= review.rating ? 'fas' : 'far'} fa-star text-yellow-400"></i>`;
-    }
-
-    reviewEl.innerHTML = `
-      <img src="${review.image}" alt="${review.name}" class="w-10 h-10 rounded-full object-cover">
+  reviewCard.innerHTML = `
+    <div class="flex items-center mb-3">
+      <img src="${review.image}" alt="${review.name}" class="w-10 h-10 rounded-full mr-3">
       <div>
-        <div class="font-semibold">${review.name}</div>
-        <div class="flex items-center text-sm text-yellow-400 mb-1 space-x-2">
-          <div class="flex">${stars}</div>
-          <span class="text-gray-500 text-xs">${review.timeAgo}</span>
-        </div>
-        <p class="text-sm text-gray-700">${review.comment}</p>
+        <p class="font-semibold">${review.name}</p>
+        <div class="text-yellow-500 text-sm">${stars}</div>
+        <p class="text-xs text-gray-500">${review.timeAgo}</p>
       </div>
-    `;
-    container.appendChild(reviewEl);
-  });
-}
+    </div>
+    <p class="text-sm text-gray-700">${review.comment || '<i>(tidak ada komentar)</i>'}</p>
+  `;
+
+  reviewList.appendChild(reviewCard);
+});
+
 
 function loadMoreReviews() {
   if (!moreLoaded) {
