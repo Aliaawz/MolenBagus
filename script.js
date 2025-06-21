@@ -81,8 +81,8 @@ initialReviews.forEach((review) => {
 
   const bgImages = [
     "images/bgutama.png",
-    "images/bgutamakedua.png",
-    "images/bgutamaketiga.png"
+    "images/bg-kedua.jpg",
+    "images/bg-ketiga.jpg"
   ];
 
   let currentBg = 0;
