@@ -80,9 +80,9 @@ initialReviews.forEach((review) => {
    const banner = document.getElementById("molenBanner");
 
   const bgImages = [
-    "images/utama.jpg",
-    "images/utama.jpg",
-    "images/utama.jpg"
+    "images/bgutama.png",
+    "images/utam.jpg",
+    "images/utaa.jpg"
   ];
 
   let currentBg = 0;
