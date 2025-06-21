@@ -81,8 +81,10 @@ initialReviews.forEach((review) => {
 
   const bgImages = [
     "images/bgutama.png",
-    "images/molenzzbagus_11zon.jpg",
-    "images/molens_11zon.jpg"
+    "images/bg-onde.jpg",
+    "images/bg-molen.jpg",
+    "images/bg-kuesus.jpg"
+
   ];
 
   let currentBg = 0;
