@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Milk Shop - Optimized</title>
+  <title>MolenBagus</title>
 
   <!-- Preconnect & DNS Prefetch -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
@@ -39,21 +39,39 @@
       <img src="images/logo-bagus.jpg" class="w-20 absolute top-2 right-2" width="80" height="80" loading="lazy" alt="Icon Molen" />
     </div>
 
-    <!-- Categories -->
-    <div class="flex overflow-x-auto space-x-3 mb-4">
-      <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="images/cash.jpg" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Cash" />Cash
-      </div>
-      <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="images/gfood.png" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Gofood" />Gofood
-      </div>
-      <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="images/shopeefood.png" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Shopeefood" />Shopeefood
-      </div>
-      <div class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
-        <img src="images/wa.jpg" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Mbanking" />Whatsapp
-      </div>
-    </div>
+<!-- Categories -->
+    <div class="flex overflow-x-auto space-x-3 mb-4 text-xs">
+  <a href="https://example.com/cash" class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+    <img src="images/cash.jpg" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Cash" />
+    Cash
+  </a>
+  <a href="https://gofood.link/your-link" class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+    <img src="images/gfood.png" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Gofood" />
+    Gofood
+  </a>
+  <a href="https://shopee.co.id/universal-link/now-food/shop/1233115" class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+    <img src="images/shopeefood.png" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="shopee" />
+    Sfood
+  </a>
+  <a href="https://r.grab.com/g/your-link" class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+    <img src="images/graabfood.jpg" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Grab" />
+    Grabfood
+  </a>
+  <a href="ttps://www.google.com/maps/place/Molen+Bagus" target="_blank" class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+    <img src="images/maps.jpg" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Outlet" />
+    WhatsApp
+  </a>
+  <a href="https://wa.me/6285283751548?text=Halo%20Molen%20Bagus" target="_blank" class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+    <img src="images/wa.jpg" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="Contact" />
+    WhatsApp
+  </a>
+  <a href="https://www.instagram.com/molen_bagus" target="_blank" class="flex-shrink-0 w-16 bg-white p-2 rounded-xl shadow text-center">
+    <img src="images/ig.jpg" width="32" height="32" class="w-8 mx-auto mb-1" loading="lazy" alt="instagram" />
+    WhatsApp
+  </a>
+</div>
+
+
 
     <!-- Search -->
     <input id="searchInput" type="text" placeholder="Cari produk..." class="w-full p-3 rounded-lg border border-gray-300 mb-4" />
@@ -71,8 +89,30 @@
       </button>
       <h3 class="text-lg font-bold mb-3">Isi Keranjang</h3>
       <ul id="cartItems" class="space-y-2 max-h-60 overflow-y-auto text-left text-sm">
-        <li>(Keranjang masih kosong, ayok pesan dulu)</li>
+        <li>(Kosong)</li>
       </ul>
+      <div class="mt-4">
+        <label class="block font-semibold mb-2 text-sm">Pilih Metode Pembayaran:</label>
+        <div class="flex space-x-4 justify-center">
+          <button onclick="selectPayment('ShopeeFood')" class="p-2 bg-white rounded-lg shadow hover:scale-105 transition"loading="lazy"width="32" height="32">
+            <img src="images/shopeefood.png" alt="ShopeeFood" class="w-8 h-8 mx-auto" />
+          </button>
+          <button onclick="selectPayment('GrabFood')" class="p-2 bg-white rounded-lg shadow hover:scale-105 transition"loading="lazy" width="32" height="32">
+            <img src="images/graabfood.jpg" alt="Grab" class="w-8 h-8 mx-auto" />
+          </button>
+          <button onclick="selectPayment('GoFood')" class="p-2 bg-white rounded-lg shadow hover:scale-105 transition"loading="lazy"  width="32" height="32">
+            <img src="images/gfood.png" alt="Gojek" class="w-8 h-8 mx-auto" />
+          </button>
+          <button onclick="selectPayment('WhatsApp')" class="p-2 bg-white rounded-lg shadow hover:scale-105 transition"loading="lazy" width="32" height="32">
+            <img src="images/wa.jpg" alt="WhatsApp" class="w-8 h-8 mx-auto" />
+          </button>
+        </div>
+      </div>
+      <div class="text-right mt-4">
+        <button onclick="goToCheckout()" class="bg-orange-400 text-white px-4 py-2 rounded-lg hover:bg-orange-500 hover:brightness-110 transition duration-300">
+          Bayar Sekarang
+        </button>
+      </div>
     </div>
   </div>
 
